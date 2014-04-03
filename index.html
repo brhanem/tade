@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  <script data-require="angular.js@1.1.5" data-semver="1.2.15" src="http://code.angularjs.org/1.2.15/angular.js"></script>
+  <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script data-require="bootstrap@*" data-semver="3.1.1" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+
+  <div class="row">
+    <button type="button" class="btn btn-primary btn-lg center-block" ng-click="newGame(true)">
+      <span class="glyphicon glyphicon-star"></span> New Game
+    </button>
+  </div>
+  <div ng-show="gameStarted">
+    <div class="row" style="height:100px">
+      <div class="col-xs-4 tade-label">Time<br>{{time}}</div>
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4 tade-label">Score<br>{{score}}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-1 "></div>
+      <div ng-repeat="dig in plate" class="modifiedRow col-xs-2 digit{{$index+1}}" ng-class="{modified : dig.current != dig.original }"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-1 "></div>
+      <div ng-repeat="dig in plate" class="col-xs-2 digit digit{{$index+1}}" ng-click="digitClicked($index)">{{dig.current}}</div>
+    </div>
+
+    <div class="{{'digit'+(currentDigit + 1)}}" ng-hide="currentDigit==-1">
+      <div class="row" ng-repeat="digitRow in digitRows">
+        <div class="col-xs-1 "></div>
+        <div ng-repeat="dig in digitRow" class="col-xs-2 digit" ng-click="setValue(dig)">{{dig}}</div>
+      </div>
+    </div>
+  </div>
+  
+
+
+</body>
+
+</html>
