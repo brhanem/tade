@@ -1,0 +1,44 @@
+/* Styles go here */
+.digit {
+   height: 100px;
+   line-height: 100px;
+   color : white;
+   text-align : center;
+   font-size : 50px;
+   cursor : pointer;
+   /*border-right-style: solid;*/
+   /*bborder-right-width: 10px;*/
+  /*b border-right-color:rgb(242, 242, 242); */
+   
+}
+.digit1 {
+   background-color : rgb(0,185,255); 
+}
+
+.digit2 {
+   background-color : rgb(255, 174, 0); 
+}
+
+.digit3 {
+   background-color : rgb(255, 93, 10); 
+}
+
+.digit4 {
+   background-color : rgb(0, 255, 208); 
+}
+
+.digit5 {
+   background-color : rgb(255, 223, 0); 
+}
+.tade-label  {
+  text-align : center;
+}
+.modified {
+  background-color: black;
+}
+.modifiedRow {
+  height:10px;
+}
+body {
+  background-color : rgb(242, 242, 242);
+}
